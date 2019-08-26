@@ -1,0 +1,34 @@
+function smart_turn()
+{
+      if (frontIsBlocked() && leftIsClear())
+      {
+         turnLeft();
+      }
+      else if (frontIsBlocked() && rightIsClear())
+      {
+         turnRight();
+      }
+}
+
+function turn_around()
+{
+   turnLeft();
+   turnLeft();
+}
+
+function main()
+{
+   while (noBeepersPresent())
+   {
+      smart_turn();
+      putBeeper();
+      move();
+   }
+   turn_around();
+   while(beepersPresent())
+   {
+      smart_turn();
+      pickBeeper();
+      move();
+   }
+}

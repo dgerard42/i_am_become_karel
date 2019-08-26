@@ -19,3 +19,24 @@ function main()
    }   
    pickBeeper();
 }
+
+revision:
+function main()
+{
+   while (noBeepersPresent())
+   {
+      if (leftIsClear())
+      {
+         turnLeft();
+      }
+      if (frontIsClear())
+      {
+        move();
+      }
+      else
+      {
+         turnRight();
+      }
+   }   
+   pickBeeper();
+}

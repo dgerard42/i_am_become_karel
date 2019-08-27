@@ -1,0 +1,25 @@
+
+function main(){
+   while (noBeepersPresent())
+   {
+      if (frontIsClear() && noBeepersPresent())
+      {
+         putBeeper();
+         move();
+      }
+      else if (frontIsBlocked() && noBeepersPresent())
+      {
+         putBeeper();
+         turnLeft();
+         move();
+      }
+      if (beepersPresent())
+      {
+         turnLeft();
+         turnLeft();
+         move();
+         turnRight();
+         move();
+      }
+   }
+}

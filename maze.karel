@@ -2,29 +2,6 @@ function main()
 {
    while (noBeepersPresent())
    {
-      //prioritize movement left. If the left is clear, then make a left turn immediately
-      if (leftIsClear())
-      {
-         turnLeft();
-         move(); //test rm this line
-      }
-      else if (frontIsClear())
-      {
-        move();
-      }
-      else
-      {
-         turnRight();
-      }
-   }   
-   pickBeeper();
-}
-
-revision:
-function main()
-{
-   while (noBeepersPresent())
-   {
       if (leftIsClear())
       {
          turnLeft();

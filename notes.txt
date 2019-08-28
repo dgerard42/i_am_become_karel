@@ -1,0 +1,3 @@
+- when you are on the last middle beeper, and you move forward, there is not a beeper in that new space
+- that is the only case in which you will first hit open space
+- upon that condition, move backwards, place beeper, and BREAK from the while loops

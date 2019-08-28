@@ -1,0 +1,52 @@
+function odd_row()
+{
+   while (frontIsClear())
+   {
+      putBeeper();
+      move();
+      move();
+   }
+   putBeeper();
+}
+
+function even_row()
+{
+   while (frontIsClear())
+   {
+      move();
+      putBeeper();
+      move();
+   }
+}
+
+function go_back()
+{
+   turnAround();
+   while (frontIsClear())
+   {
+      move();
+   }
+}
+
+function up_one()
+{
+   turnRight();
+   if (frontIsClear())
+   {
+      move();
+      turnRight();
+   }
+}
+
+function main()
+{
+   while (frontIsClear())
+   {
+      odd_row();
+      go_back();
+      up_one();
+      even_row();
+      go_back();
+      up_one();
+   }
+}

@@ -1,9 +1,3 @@
-function turn_around()
-{
-   turnLeft();
-   turnLeft();
-}
-
 function set_up()
 {
    while (frontIsClear())
@@ -22,18 +16,41 @@ function zoom()
    }
 }
 
+function end()
+{
+   turnAround();
+   move();
+   putBeeper();
+   move();
+}
+
 function main()
 {
    set_up();
-   turn_around();
+   turnAround();
    while(beepersPresent())
    {
       pickBeeper();
-      zoom();
-      turn_around();
-      while (noBeepersPresent())
+      if(frontIsClear())
       {
          move();
+         if(noBeepersPresent())
+         {
+            end();
+         }
+         else
+         {
+            turnAround();
+            move();
+            turnAround();
+            zoom();
+            turnAround();
+            while (noBeepersPresent())
+            {
+               move();
+            }
+         }
       }
+      
    }
 }
